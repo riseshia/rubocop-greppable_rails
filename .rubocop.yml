@@ -12,3 +12,7 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
+
+Naming/FileName:
+  Exclude:
+    - lib/rubocop-readable_rails.rb

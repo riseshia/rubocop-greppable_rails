@@ -3,8 +3,7 @@
 require_relative "readable_rails/version"
 
 module Rubocop
+  # Root module for ReadableRails
   module ReadableRails
-    class Error < StandardError; end
-    # Your code goes here...
   end
 end

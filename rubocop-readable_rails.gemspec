@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "lib/rubocop/readable_rails/version"
+$LOAD_PATH.unshift File.expand_path("lib", __dir__)
+
+require "rubocop/readable_rails/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "rubocop-readable_rails"
