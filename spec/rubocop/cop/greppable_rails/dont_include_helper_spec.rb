@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::ReadableRails::IncludeHelper, :config do
+RSpec.describe RuboCop::Cop::GreppableRails::DontIncludeHelper, :config do
   it "registers an offense when module including Helper" do
     expect_offense(<<~RUBY)
       include PostHelper
