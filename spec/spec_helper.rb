@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "rubocop-readable_rails"
+require "rubocop-greppable_rails"
 require "rubocop/rspec/support"
 
 # Requires supporting files with custom matchers and macros, etc,

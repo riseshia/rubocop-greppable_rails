@@ -4,7 +4,7 @@ inherit_mode:
   merge:
     - Exclude
 
-ReadableRails/IncludeHelper:
+GreppableRails/IncludeHelper:
   Description: 'Prohibit including Helper.'
   Enabled: true
   VersionAdded: '0.1.0'

@@ -2,7 +2,7 @@
 
 $LOAD_PATH.unshift File.expand_path("lib", __dir__)
 
-require "rubocop/readable_rails/version"
+require "rubocop/greppable_rails/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "rubocop-readable_rails"

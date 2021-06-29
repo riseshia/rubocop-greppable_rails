@@ -15,4 +15,4 @@ Layout/LineLength:
 
 Naming/FileName:
   Exclude:
-    - lib/rubocop-readable_rails.rb
+    - lib/rubocop-greppable_rails.rb
