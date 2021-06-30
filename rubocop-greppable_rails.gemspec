@@ -5,22 +5,22 @@ $LOAD_PATH.unshift File.expand_path("lib", __dir__)
 require "rubocop/greppable_rails/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "rubocop-readable_rails"
+  spec.name          = "rubocop-greppable_rails"
   spec.version       = Rubocop::ReadableRails::VERSION
   spec.authors       = ["Shia"]
   spec.email         = ["rise.shia@gmail.com"]
 
   spec.summary       = "rubocop/ReadableRails"
-  spec.description   = "For readable rails"
-  spec.homepage      = "https://github.com/riseshia/rubocop-readable_rails"
+  spec.description   = "For greppable rails"
+  spec.homepage      = "https://github.com/riseshia/rubocop-greppable_rails"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/riseshia/rubocop-readable_rails"
-  spec.metadata["changelog_uri"] = "https://github.com/riseshia/rubocop-readable_rails"
+  spec.metadata["source_code_uri"] = "https://github.com/riseshia/rubocop-greppable_rails"
+  spec.metadata["changelog_uri"] = "https://github.com/riseshia/rubocop-greppable_rails"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
