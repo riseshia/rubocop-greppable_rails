@@ -14,3 +14,7 @@ GreppableRails/UseInlineAccessModifier:
   Enabled: true
   VersionAdded: '0.1.0'
 
+GreppableRails/DontCallHelperInController:
+  Description: 'Prohibit include helper via call helper in Controller.'
+  Enabled: true
+  VersionAdded: '0.1.0'
