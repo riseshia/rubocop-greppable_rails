@@ -8,6 +8,8 @@ GreppableRails/DontIncludeInHelper:
   Description: 'Prohibit include in Helper.'
   Enabled: true
   VersionAdded: '0.1.0'
+  Include:
+    - app/helper/**/*.rb
 
 GreppableRails/UseInlineAccessModifier:
   Description: 'Use inline style access modifier.'
@@ -18,3 +20,5 @@ GreppableRails/DontCallHelperInController:
   Description: 'Prohibit include helper via call helper in Controller.'
   Enabled: true
   VersionAdded: '0.1.0'
+  Include:
+    - app/controllers/**/*.rb
