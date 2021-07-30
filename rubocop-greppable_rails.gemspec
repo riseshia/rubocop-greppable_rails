@@ -6,7 +6,7 @@ require "rubocop/greppable_rails/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "rubocop-greppable_rails"
-  spec.version       = Rubocop::ReadableRails::VERSION
+  spec.version       = Rubocop::GreppableRails::VERSION
   spec.authors       = ["Shia"]
   spec.email         = ["rise.shia@gmail.com"]
 
