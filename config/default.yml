@@ -9,4 +9,8 @@ GreppableRails/DontIncludeInHelper:
   Enabled: true
   VersionAdded: '0.1.0'
 
+GreppableRails/UseInlineAccessModifier:
+  Description: 'Use inline style access modifier.'
+  Enabled: true
+  VersionAdded: '0.1.0'
 
