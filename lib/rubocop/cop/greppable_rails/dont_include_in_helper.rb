@@ -2,7 +2,7 @@
 
 module RuboCop
   module Cop
-    module ReadableRails
+    module GreppableRails
       # This cop looks for include Helper execution.
       # Including Helper, in most cases, makes:
       # - hard to find out some helper method is used or not.
@@ -43,16 +43,22 @@ module RuboCop
       #     end
       #   end
       #
-      class DontIncludeHelper < Base
-        MSG = "Do not include Helper."
+      class DontIncludeInHelper < Base
+        MSG = "Do not include in Helper."
         RESTRICT_ON_SEND = %i[include].freeze
 
         def_node_matcher :render_with_inline_option?, <<~PATTERN
-          (send _ :include (const _ %1))
+          (send _ :include (const _ _))
         PATTERN
 
         def on_send(node)
-          add_offense(node) if render_with_inline_option?(node, /^.+Helper$/)
+          parent_node = node.parent
+          return unless parent_node.type == :module
+
+          module_name = parent_node.children.first.children.last.to_s
+          return unless module_name.end_with?("Helper")
+
+          add_offense(node) if render_with_inline_option?(node)
         end
       end
     end
