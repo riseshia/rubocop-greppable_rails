@@ -9,7 +9,7 @@ GreppableRails/DontIncludeInHelper:
   Enabled: true
   VersionAdded: '0.1.0'
   Include:
-    - app/helper/**/*.rb
+    - app/helpers/**/*.rb
 
 GreppableRails/UseInlineAccessModifier:
   Description: 'Use inline style access modifier.'
