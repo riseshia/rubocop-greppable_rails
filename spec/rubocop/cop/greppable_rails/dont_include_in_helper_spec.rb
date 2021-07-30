@@ -6,6 +6,9 @@ RSpec.describe RuboCop::Cop::GreppableRails::DontIncludeInHelper, :config do
       module UserHelper
         include Post
         ^^^^^^^^^^^^ Do not include in Helper.
+
+        def format_name(user)
+        end
       end
     RUBY
   end

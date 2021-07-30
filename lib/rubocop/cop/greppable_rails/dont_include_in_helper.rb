@@ -51,8 +51,17 @@ module RuboCop
           (send _ :include (const _ _))
         PATTERN
 
-        def on_send(node)
+        def find_parent(node)
           parent_node = node.parent
+          if parent_node.type == :begin
+            parent_node.parent
+          else
+            parent_node
+          end
+        end
+
+        def on_send(node)
+          parent_node = find_parent(node)
           return unless parent_node.type == :module
 
           module_name = parent_node.children.first.children.last.to_s
