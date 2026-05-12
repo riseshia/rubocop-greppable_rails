@@ -17,21 +17,11 @@ module RuboCop
           (send nil? {:helper} (sym _))
         PATTERN
 
-        def find_parent(node)
-          parent_node = node.parent
-          if parent_node.type == :begin
-            parent_node.parent
-          else
-            parent_node
-          end
-        end
-
         def on_send(node)
-          parent_node = find_parent(node)
-          return unless parent_node.type == :class
-
-          class_name = parent_node.children.first.children.last.to_s
-          return unless class_name.end_with?("Controller")
+          parent = node.parent
+          parent = parent.parent if parent&.begin_type?
+          return unless parent&.class_type?
+          return unless parent.identifier.const_name.end_with?("Controller")
 
           add_offense(node) if offense?(node)
         end

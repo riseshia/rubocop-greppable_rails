@@ -27,4 +27,13 @@ RSpec.describe RuboCop::Cop::GreppableRails::DontCallHelperInController, :config
       end
     RUBY
   end
+
+  it "registers an offense for namespaced Controller" do
+    expect_offense(<<~RUBY)
+      class Admin::FoosController
+        helper :bar
+        ^^^^^^^^^^^ Don't include helper via call helper in Controller.
+      end
+    RUBY
+  end
 end

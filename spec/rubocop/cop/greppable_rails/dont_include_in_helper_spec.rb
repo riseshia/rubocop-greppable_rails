@@ -28,4 +28,13 @@ RSpec.describe RuboCop::Cop::GreppableRails::DontIncludeInHelper, :config do
       end
     RUBY
   end
+
+  it "registers an offense for namespaced Helper" do
+    expect_offense(<<~RUBY)
+      module Admin::UserHelper
+        include Post
+        ^^^^^^^^^^^^ Do not include in Helper.
+      end
+    RUBY
+  end
 end

@@ -7,6 +7,9 @@ All notable changes are documented here.
 ### Added
 - Migrated to the `lint_roller`-based RuboCop plugin system (RuboCop 1.72+). Register with `plugins: rubocop-greppable_rails` in `.rubocop.yml`.
 
+### Fixed
+- `GreppableRails/DontCallHelperInController` and `GreppableRails/DontIncludeInHelper` now correctly handle namespaced classes/modules (e.g. `Admin::FoosController`).
+
 ### Changed
 - Bumped required Ruby to `>= 3.2`.
 - Pinned `rubocop` runtime dependency to `>= 1.72`.

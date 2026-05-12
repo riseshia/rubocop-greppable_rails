@@ -51,21 +51,11 @@ module RuboCop
           (send _ :include (const _ _))
         PATTERN
 
-        def find_parent(node)
-          parent_node = node.parent
-          if parent_node.type == :begin
-            parent_node.parent
-          else
-            parent_node
-          end
-        end
-
         def on_send(node)
-          parent_node = find_parent(node)
-          return unless parent_node.type == :module
-
-          module_name = parent_node.children.first.children.last.to_s
-          return unless module_name.end_with?("Helper")
+          parent = node.parent
+          parent = parent.parent if parent&.begin_type?
+          return unless parent&.module_type?
+          return unless parent.identifier.const_name.end_with?("Helper")
 
           add_offense(node) if render_with_inline_option?(node)
         end
