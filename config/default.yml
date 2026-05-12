@@ -4,21 +4,23 @@ inherit_mode:
   merge:
     - Exclude
 
-GreppableRails/DontIncludeInHelper:
-  Description: 'Prohibit include in Helper.'
+GreppableRails/NoIncludeInHelper:
+  Description: 'Avoid `include` inside helper modules to keep helper definitions greppable.'
   Enabled: true
   VersionAdded: '0.1.0'
+  VersionChanged: '1.0.0'
   Include:
     - app/helpers/**/*.rb
 
 GreppableRails/UseInlineAccessModifier:
-  Description: 'Use inline style access modifier.'
+  Description: 'Use the inline form of `private`/`protected` (`private def foo`) so method visibility stays on the same line as the definition.'
   Enabled: true
   VersionAdded: '0.1.0'
 
-GreppableRails/DontCallHelperInController:
-  Description: 'Prohibit include helper via call helper in Controller.'
+GreppableRails/NoHelperInController:
+  Description: 'Avoid `helper :name` at controller class scope; reference the helper module explicitly to keep call sites greppable.'
   Enabled: true
   VersionAdded: '0.1.0'
+  VersionChanged: '1.0.0'
   Include:
     - app/controllers/**/*.rb

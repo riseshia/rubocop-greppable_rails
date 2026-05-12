@@ -27,7 +27,7 @@ plugins:
 
 ## Cops
 
-### `GreppableRails/DontIncludeInHelper`
+### `GreppableRails/NoIncludeInHelper`
 
 Prohibits `include` inside helper modules. Including makes it hard to grep where a helper method actually lives, and broadens the constant-dependency surface.
 
@@ -59,7 +59,7 @@ module TopHelper
 end
 ```
 
-### `GreppableRails/DontCallHelperInController`
+### `GreppableRails/NoHelperInController`
 
 Prohibits `helper :name` calls at class scope in controllers. Implicit helper inclusion makes the helper method's call site impossible to grep from the controller.
 

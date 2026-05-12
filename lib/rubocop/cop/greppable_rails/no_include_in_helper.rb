@@ -35,7 +35,7 @@ module RuboCop
       #       PostLinkTag.some_post_link(posts.first)
       #     end
       #   end
-      class DontIncludeInHelper < Base
+      class NoIncludeInHelper < Base
         MSG = "Do not include in Helper."
         RESTRICT_ON_SEND = %i[include].freeze
 

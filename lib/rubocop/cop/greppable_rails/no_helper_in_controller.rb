@@ -20,7 +20,7 @@ module RuboCop
       #       @label = BarHelper.label_for(@foo)
       #     end
       #   end
-      class DontCallHelperInController < Base
+      class NoHelperInController < Base
         MSG = "Don't include helper via call helper in Controller."
 
         RESTRICT_ON_SEND = %i[helper].freeze

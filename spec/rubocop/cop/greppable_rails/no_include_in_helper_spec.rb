@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::GreppableRails::DontIncludeInHelper, :config do
+RSpec.describe RuboCop::Cop::GreppableRails::NoIncludeInHelper, :config do
   it "registers an offense when module including some constant" do
     expect_offense(<<~RUBY)
       module UserHelper

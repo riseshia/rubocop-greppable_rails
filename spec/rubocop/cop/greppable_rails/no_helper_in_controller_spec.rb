@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::GreppableRails::DontCallHelperInController, :config do
+RSpec.describe RuboCop::Cop::GreppableRails::NoHelperInController, :config do
   it "registers an offense when call helper in Controller" do
     expect_offense(<<~RUBY)
       class FooController
