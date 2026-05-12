@@ -10,13 +10,13 @@
 
 ## 2. 의존성 / 버전 정리
 
-- [ ] `rubocop-greppable_rails.gemspec`: `required_ruby_version = ">= 2.7.0"` → 최소 3.1 또는 3.2 이상
+- [x] `rubocop-greppable_rails.gemspec`: `required_ruby_version = ">= 2.7.0"` → `>= 3.2.0`
 - [ ] `rubocop-greppable_rails.gemspec`: `summary` 옛 이름(`rubocop/ReadableRails`) 교체, `description`도 의미 있게 다시
 - [ ] `rubocop-greppable_rails.gemspec`: `add_dependency "rubocop"` (런타임 의존성) 추가
 - [ ] `rubocop-greppable_rails.gemspec`: `add_dependency "lint_roller"` 추가 (3번 항목 전제)
 - [ ] `rubocop-greppable_rails.gemspec`: `changelog_uri`를 실제 CHANGELOG.md를 가리키도록 수정
 - [ ] `Gemfile`: `gem "rubocop", "~> 1.7"` 제약을 `~> 1.80` 정도로 갱신하거나 gemspec runtime으로 이동
-- [ ] `.rubocop.yml`: `TargetRubyVersion: 2.7` → 위에서 올린 Ruby 버전과 일치시키기
+- [x] `.rubocop.yml`: `TargetRubyVersion: 2.7` → `3.2`
 
 ## 3. RuboCop Plugin 시스템 (1.72+) 전환
 
