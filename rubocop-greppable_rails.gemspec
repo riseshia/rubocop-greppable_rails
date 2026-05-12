@@ -11,9 +11,10 @@ Gem::Specification.new do |spec|
   spec.email         = ["rise.shia@gmail.com"]
 
   spec.summary       = "RuboCop cops for keeping Rails code greppable."
-  spec.description   = "A collection of RuboCop cops that discourage Rails patterns " \
-                       "which obscure where code comes from (helper inclusion, " \
-                       "non-inline access modifiers, etc.), so grep stays useful."
+  spec.description   = "An opinionated set of RuboCop cops recommending Rails coding " \
+                       "patterns that keep your codebase greppable. Each cop discourages " \
+                       "a construct that obscures where code comes from, so plain text " \
+                       "search remains a fast, reliable way to navigate the project."
   spec.homepage      = "https://github.com/riseshia/rubocop-greppable_rails"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
