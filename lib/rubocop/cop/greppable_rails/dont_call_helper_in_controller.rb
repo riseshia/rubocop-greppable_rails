@@ -3,10 +3,22 @@
 module RuboCop
   module Cop
     module GreppableRails
+      # Prohibits `helper :name` calls at controller class scope. Implicit
+      # helper inclusion makes the helper method's call site impossible to
+      # grep from the controller — call the helper module explicitly where
+      # you need it instead.
+      #
       # @example
       #   # bad
-      #   class FooController
+      #   class FoosController < ApplicationController
       #     helper :bar
+      #   end
+      #
+      #   # good
+      #   class FoosController < ApplicationController
+      #     def show
+      #       @label = BarHelper.label_for(@foo)
+      #     end
       #   end
       class DontCallHelperInController < Base
         MSG = "Don't include helper via call helper in Controller."

@@ -3,6 +3,13 @@
 module RuboCop
   module Cop
     module GreppableRails
+      # Enforces the inline form of `private`/`protected` access modifiers
+      # (`private def foo`) over the group form (`private` then `def foo`)
+      # and the symbol-argument form (`private :foo`). The inline form keeps
+      # a method's visibility greppable on the same line as its definition.
+      #
+      # `public` and `module_function` are intentionally out of scope.
+      #
       # @example
       #   # bad
       #   class Foo

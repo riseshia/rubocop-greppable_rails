@@ -3,26 +3,19 @@
 module RuboCop
   module Cop
     module GreppableRails
-      # This cop looks for include Helper execution.
-      # Including Helper, in most cases, makes:
-      # - hard to find out some helper method is used or not.
-      # - constant dependency more complex, which causes changing code how impact to be unpredictable.
+      # Prohibits `include` inside helper modules. Including makes it hard
+      # to grep where a helper method actually lives, and broadens the
+      # constant-dependency surface so that changes to one helper become
+      # unpredictably visible from another.
       #
       # @example
       #   # bad
-      #   # app/helpers/post_helper.rb
-      #   module PostHelper
-      #     def some_post_link(post)
-      #       # make some awesome link...
-      #     end
-      #   end
-      #
       #   # app/helpers/top_helper.rb
       #   module TopHelper
       #     include PostHelper
       #
       #     def some_link(posts)
-      #       some_post_link(post)
+      #       some_post_link(posts.first)
       #     end
       #   end
       #
@@ -32,17 +25,16 @@ module RuboCop
       #     module_function
       #
       #     def some_post_link(post)
-      #       # make some awesome link...
+      #       # ...
       #     end
       #   end
       #
       #   # app/helpers/top_helper.rb
       #   module TopHelper
       #     def some_link(posts)
-      #       PostLinkTag.some_post_link(post)
+      #       PostLinkTag.some_post_link(posts.first)
       #     end
       #   end
-      #
       class DontIncludeInHelper < Base
         MSG = "Do not include in Helper."
         RESTRICT_ON_SEND = %i[include].freeze
