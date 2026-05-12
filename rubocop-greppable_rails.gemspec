@@ -10,8 +10,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Shia"]
   spec.email         = ["rise.shia@gmail.com"]
 
-  spec.summary       = "rubocop/ReadableRails"
-  spec.description   = "For greppable rails"
+  spec.summary       = "RuboCop cops for keeping Rails code greppable."
+  spec.description   = "A collection of RuboCop cops that discourage Rails patterns " \
+                       "which obscure where code comes from (helper inclusion, " \
+                       "non-inline access modifiers, etc.), so grep stays useful."
   spec.homepage      = "https://github.com/riseshia/rubocop-greppable_rails"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
@@ -31,9 +33,5 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
-
-  # For more information and examples about making a new gem, checkout our
-  # guide at: https://bundler.io/guides/creating_gem.html
+  spec.add_dependency "rubocop", ">= 1.72"
 end
