@@ -15,7 +15,7 @@
 - [x] `rubocop-greppable_rails.gemspec`: `add_dependency "rubocop", ">= 1.72"` 추가
 - [x] ~~`rubocop-greppable_rails.gemspec`: `add_dependency "lint_roller"` 추가~~ (rubocop 1.72+ 통해 transitive로 들어옴)
 - [ ] `rubocop-greppable_rails.gemspec`: `changelog_uri`를 실제 CHANGELOG.md를 가리키도록 수정
-- [ ] `Gemfile`: `gem "rubocop", "~> 1.7"` 제약을 `~> 1.80` 정도로 갱신하거나 gemspec runtime으로 이동
+- [x] `Gemfile`: `gem "rubocop", "~> 1.7"` 라인 제거 (gemspec runtime 의존성으로 일원화)
 - [x] `.rubocop.yml`: `TargetRubyVersion: 2.7` → `3.2`
 
 ## 3. RuboCop Plugin 시스템 (1.72+) 전환
