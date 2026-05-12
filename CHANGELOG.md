@@ -2,7 +2,7 @@
 
 All notable changes are documented here.
 
-## [1.0.0] (Unreleased)
+## [1.0.0]
 
 ### Added
 - Migrated to the `lint_roller`-based RuboCop plugin system (RuboCop 1.72+). Register with `plugins: rubocop-greppable_rails` in `.rubocop.yml`.
