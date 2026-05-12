@@ -2,7 +2,7 @@
 
 require_relative "greppable_rails/version"
 
-module Rubocop
+module RuboCop
   # Root module for GreppableRails
   module GreppableRails
   end

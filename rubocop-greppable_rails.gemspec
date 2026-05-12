@@ -6,7 +6,7 @@ require "rubocop/greppable_rails/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "rubocop-greppable_rails"
-  spec.version       = Rubocop::GreppableRails::VERSION
+  spec.version       = RuboCop::GreppableRails::VERSION
   spec.authors       = ["Shia"]
   spec.email         = ["rise.shia@gmail.com"]
 
@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/riseshia/rubocop-greppable_rails"
   spec.metadata["changelog_uri"] = "https://github.com/riseshia/rubocop-greppable_rails/blob/main/CHANGELOG.md"
+  spec.metadata["default_lint_roller_plugin"] = "RuboCop::GreppableRails::Plugin"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -33,5 +34,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "rubocop", ">= 1.72"
+  spec.add_dependency "lint_roller", "~> 1.1"
+  spec.add_dependency "rubocop", ">= 1.72.0"
 end
